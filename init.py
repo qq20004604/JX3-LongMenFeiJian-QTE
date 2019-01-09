@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from lib_dd import dd
+from lib_dd import dd, dd_code
+import random
 
 import time
 import pyautogui
@@ -51,3 +52,22 @@ def main():
 main()
 # time.sleep(2)
 # print(pyautogui.locateOnScreen('end.png', region=(1260, 1389, 45, 33)))
+# dd("3")
+# print("end")
+
+# def randomJump():
+#     print('开始跳跃')
+#     count = 0
+#     time.sleep(3)
+#     while True:
+#         count += 1
+#         t = random.randint(10, 30)
+#         print("延迟", t, "秒", "，即将第", count, "次执行")
+#         time.sleep(t)
+#         dd_code(603)
+#         t2 = random.randint(1, 4)
+#         time.sleep(t2)
+#         kv = ('1', '2', '3', '4', '7')
+#         dd(kv[t2])
+#
+# randomJump()

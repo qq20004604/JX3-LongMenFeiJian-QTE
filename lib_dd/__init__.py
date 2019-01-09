@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from ctypes import *
-dd_dll = windll.LoadLibrary('DD85590.32.dll')
+import time
+
+dd_dll = windll.LoadLibrary('dll/DD85590.32.dll')
 # DD虚拟码，可以用DD内置函数转换。
+# 对照图可以参考这个链接：https://blog.csdn.net/sheng_lianfeng/article/details/7209995
 vk = {'5': 205,
       'c': 503,
       'n': 506,
@@ -48,7 +51,8 @@ vk = {'5': 205,
       '-': 211,
       '=': 212,
       's': 402,
-      ';': 410}
+      ';': 410,
+      ' ': 603}
 # 需要组合shift的按键。
 vk2 = {
     '"': "'",
@@ -98,3 +102,9 @@ def dd(i):
         dd_dll.DD_key(500, 2)
     else:
         down_up(i)
+
+
+def dd_code(code):
+    dd_dll.DD_key(code, 1)
+    time.sleep(0.2)
+    dd_dll.DD_key(code, 2)
